@@ -1,20 +1,15 @@
-const StudentForm = ({ addStudent }) => {
+const StudentForm = () => {
   return (
     <section id="formContainer">
-      <form id="studentForm" onSubmit={(e) => {
-        e.preventDefault();
-
-        addStudent(
-          e.target.name.value,
-          e.target.program.value
-        );
-
-        e.target.reset();
-      }}>
-
+      <form id="studentForm">
         <div className="input-fields">
           <label htmlFor="name">Student Name</label>
           <input type="text" name="name" id="name" />
+        </div>
+
+        <div className="input-fields">
+          <label htmlFor="srcode">SR-CODE</label>
+          <input type="text" name="srcode" id="srcode" />
         </div>
 
         <div className="input-fields">
@@ -25,7 +20,6 @@ const StudentForm = ({ addStudent }) => {
         <div>
           <button type="submit">Add Student</button>
         </div>
-
       </form>
     </section>
   );
